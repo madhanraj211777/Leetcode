@@ -1,0 +1,88 @@
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner scan=new Scanner(System.in);
+		int add=0;
+		System.out.println("enter the number of string:");
+		String s=scan.nextLine();
+		char before=' ';
+		for(int i=0;i<s.length();i++){
+		    char a=s.charAt(i);
+		switch(a){
+		    
+		   case 'I':
+		  add=add+1;
+		 
+		  before='I';
+		  break;
+		  
+		  case 'V': 
+		      if(before=='I'){
+		          add=add-1;
+		          add=add+4;
+		         break; 
+		      }else{
+		      add=add+5;
+		      before='V';
+		          
+		      }
+		  break;
+		  
+		   case 'X':  
+		       if(before=='I'){
+		           add=add-1;
+		           add=add+9;
+		           
+		           break;
+		       }
+		       
+		       
+		      add=add+10;
+		     
+		      before='X';
+		  break;
+		  
+		   case 'L':  
+		       if(before=='X'){
+		           add=add-10;
+		           add=add+40;
+		           break;
+		       }
+		      add=add+50;
+		      before='L';
+		  break;
+		   case 'C':  
+		       if(before=='X'){
+		           add=add-10;
+		           add=add+90;
+		           break;
+		           
+		       }
+		      add=add+100;
+		      before='C';
+		  break;
+		   case 'D':  
+		       if(before=='C'){
+		           add=add-100;
+		           add=add+400;
+		           break;
+		       }
+		      add=add+500;
+		      before='D';
+		  break;
+		   case 'M':  
+		       if(before=='C'){
+		           add=add-100;
+		           add=add+900;
+		           break;
+		       }
+		      add=add+1000;
+		      before='M';
+		  break;
+		  
+		}}
+		System.out.print(s+" is in numeric is "+ add);
+	}
+}
